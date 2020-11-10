@@ -1,14 +1,9 @@
-const mysql = require('mysql');
+const database = require('../../tools/database');
 
-require('dotenv').config();
-
-const connection = mysql.createConnection(({
-  host    : process.env.MYSQL_HOST,
-  user    : process.env.MYSQL_USER,
-  password: process.env.MYSQL_PASSWORD,
-  database: process.env.MYSQL_DATABASE
-}));
-
+const tables = {
+  member    : 'member',
+  loginToken: 'member_login_token'
+};
 
 exports.get = (req) => {
   connection.connect();
@@ -17,5 +12,19 @@ exports.get = (req) => {
     console.log(rows);
   });
   connection.end();
+};
+
+exports.getByToken = async (token) => {
+  let pool = database.slave.promise();
+
+  let [rows, fields] = await pool.query(`SELECT * FROM ${tables.loginToken} WHERE token = ? ORDER BY createdAt DESC LIMIT 1`, [token]);
+  if (rows.length) {
+    let userIdx = rows[0].user_idx;
+    [rows, fields] = await pool.query(`SELECT * FROM ${tables.member} WHERE idx = ?`, [userIdx]);
+    if (rows.length) {
+      return rows[0];
+    }
+  }
+  return null;
 };
 

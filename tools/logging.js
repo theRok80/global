@@ -1,7 +1,6 @@
 const winston = require('winston');
-const fs = require('fs');
-const path = require('path');
 const moment = require('moment');
+const _ = require('lodash');
 
 require('dotenv').config();
 
@@ -14,10 +13,11 @@ const logger = winston.createLogger({
 });
 
 let params = {};
-let keyNames = ['path', 'params', 'body', 'query'];
+const requestNames = ['path', 'params', 'body', 'query'];
+const headerNames = ['token'];
 
 if (process.env.ENVIRONMENT === 'development') {
-  logger.add(new winston.transports.Console());
+  // logger.add(new winston.transports.Console());
 }
 
 /**
@@ -29,33 +29,31 @@ if (process.env.ENVIRONMENT === 'development') {
  * @since 2020.11.02
  */
 exports.accessLog = (req) => {
-  const dir = path.join(__dirname, `../logs/${req.apiVersion}/${req.userKey}/`);
-  !fs.existsSync(dir) && fs.mkdirSync(dir);
+  if (typeof req.logPath != 'undefined') {
+    const file = new winston.transports.File({
+      filename: req.logPath + 'access_' + moment().format('YYYY_MM_DD') + '.log',
+      level   : 'info'
+    });
 
-  const file = new winston.transports.File({
-    filename: dir + 'access_' + moment().format('YYYY_MM_DD') + '.log',
-    level   : 'info'
-  });
+    logger.add(file);
 
-  logger.add(file);
-
-  if (req.uuid) {
-    params.uuid = req.uuid;
-  }
-
-  keyNames.forEach(name => {
-    if (typeof req[name] != 'undefined' && Object.keys(req[name]).length) {
-      params[name] = req[name];
+    if (req.uuid) {
+      params.uuid = req.uuid;
     }
-  });
 
-  params.headers = {};
-  keyNames = ['x-api-key', 'user-key'];
-  keyNames.forEach(name => {
-    params.headers[name] = req.headers[name];
-  });
-  logger.info(params);
-  logger.remove(file);
+    requestNames.forEach(name => {
+      if (typeof req[name] != 'undefined' && Object.keys(req[name]).length) {
+        params[name] = req[name];
+      }
+    });
+
+    params.headers = {};
+    headerNames.forEach(name => {
+      params.headers[name] = req.headers[name];
+    });
+    logger.info(params);
+    logger.remove(file);
+  }
 };
 
 /**
@@ -68,40 +66,29 @@ exports.accessLog = (req) => {
  * @since 2020.11.02
  */
 exports.error = (req, err) => {
-  let dir;
-  if (req.apiVersion) {
-    if (req.userKey) {
-      dir = path.join(__dirname, `../logs/${req.apiVersion}/${req.userKey}/`);
-    } else {
-      dir = path.join(__dirname, `../logs/${res.version}/`);
+  if (req.logPath) {
+    logger.add(new winston.transports.File({
+      filename: req.logPath + 'error_' + moment().format('YYYY_MM_DD') + '.log',
+      level   : 'error'
+    }));
+
+    if (req.uuid) {
+      params.uuid = req.uuid;
     }
-  } else {
-    dir = path.join(__dirname, '../logs/');
+
+    requestNames.forEach(name => {
+      if (typeof req[name] != 'undefined' && Object.keys(req[name]).length) {
+        params[name] = req[name];
+      }
+    });
+
+    params.headers = {};
+    headerNames.forEach(name => {
+      params.headers[name] = req.headers[name];
+    });
+
+    params.error = err;
+
+    logger.error(params);
   }
-  !fs.existsSync(dir) && fs.mkdirSync(dir);
-
-  logger.add(new winston.transports.File({
-    filename: dir + 'error_' + moment().format('YYYY_MM_DD') + '.log',
-    level: 'error'
-  }));
-
-  if (req.uuid) {
-    params.uuid = req.uuid;
-  }
-
-  keyNames.forEach(name => {
-    if (typeof req[name]  != 'undefined' && Object.keys(req[name]).length) {
-      params[name] = req[name];
-    }
-  });
-
-  params.headers = {};
-  keyNames = ['x-api-key', 'user-key'];
-  keyNames.forEach(name => {
-    params.headers[name] = req.headers[name];
-  });
-
-  params.error = err;
-
-  logger.error(params);
 };

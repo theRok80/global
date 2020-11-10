@@ -19,10 +19,11 @@ const apiRouter = {
 const {header, validationResult} = require('express-validator');
 const validation = require('./middlewares/validation');
 const statistics = require('./middlewares/stastics');
-const keyValidation = require('./middlewares/keyValidation');
+const userValidation = require('./middlewares/userValidation');
 
 // tools
 const response = require('./tools/response');
+const {setUserLogPath} = require('./tools/common');
 
 const app = express();
 
@@ -33,7 +34,6 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 
 app.use(express.json());
-// app.use(expressValidator());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser(process.env.SECRET_SALT));
 app.use(expressSession({
@@ -47,9 +47,10 @@ app.use(expressSession({
 app.use(connectFlash());
 app.use(express.static(path.join(__dirname, 'public')));
 
-// set request uuid
+// set request uuid && default log path
 app.use((req, res, next) => {
   req.uuid = uuid.v4();
+  req.logPath = setUserLogPath(req);
   next();
 });
 
@@ -61,21 +62,9 @@ app.use('/json', jsonRouter);
 
 // api router
 app.use('/api/v1',
-  [
-    header('user-key').isNumeric()
-  ],
   validation('v1'),
-  keyValidation(),
+  userValidation(),
   statistics(),
-  (req, res, next) => {
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-      response.error(req, res, errors);
-    } else {
-      logger.accessLog(req);
-      next();
-    }
-  },
   apiRouter.v1
 );
 

@@ -1,8 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c705bbc8-2818-4dae-b622-a22a3bbb2c68" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="c705bbc8-2818-4dae-b622-a22a3bbb2c68" name="Default Changelist" comment="commit">
+      <change afterPath="$PROJECT_DIR$/tools/common.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/database.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/access_2020_11_06.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/handlers/userHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/handlers/userHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/managers/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/managers/user.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/keyValidation.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/userValidation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/middlewares/validation.js" beforeDir="false" afterPath="$PROJECT_DIR$/middlewares/validation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tools/logging.js" beforeDir="false" afterPath="$PROJECT_DIR$/tools/logging.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,19 +49,33 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="theRok" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitToolBoxStore">
     <option name="projectConfigVersion" value="2" />
   </component>
   <component name="ProjectId" id="1jXj4ZA4qCDDISAgBYfStwdXyMr" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="add_unversioned_files" value="true" />
+    <property name="javascript.nodejs.core.library.configured.version" value="12.19.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="12.19.0" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -42,7 +85,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Confirmation" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -85,14 +128,48 @@
       <workItem from="1604048386930" duration="599000" />
       <workItem from="1604050133786" duration="1256000" />
       <workItem from="1604279621975" duration="29794000" />
-      <workItem from="1604553700672" duration="11955000" />
+      <workItem from="1604553700672" duration="12655000" />
+      <workItem from="1604884943403" duration="14406000" />
+      <workItem from="1604942536932" duration="7940000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <created>1604656596272</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1604656596272</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="993" y="562" key="#Notifications" timestamp="1604656581293">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="993" y="562" key="#Notifications/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656581293" />
     <state x="1018" y="485" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1603964018430">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
@@ -101,38 +178,42 @@
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1086" y="657" key="Github.CreateGistDialog/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656163564" />
-    <state width="2004" height="466" key="GridCell.Tab.0.bottom" timestamp="1604656414913">
+    <state width="844" height="431" key="GridCell.Tab.0.bottom" timestamp="1604993861785">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2004" height="466" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656414913" />
-    <state width="2004" height="466" key="GridCell.Tab.0.center" timestamp="1604656414912">
+    <state width="844" height="431" key="GridCell.Tab.0.bottom/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604993861785" />
+    <state width="844" height="431" key="GridCell.Tab.0.center" timestamp="1604993861785">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2004" height="466" key="GridCell.Tab.0.center/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656414912" />
-    <state width="2004" height="466" key="GridCell.Tab.0.left" timestamp="1604656414912">
+    <state width="844" height="431" key="GridCell.Tab.0.center/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604993861785" />
+    <state width="844" height="431" key="GridCell.Tab.0.left" timestamp="1604993861785">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2004" height="466" key="GridCell.Tab.0.left/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656414912" />
-    <state width="2004" height="466" key="GridCell.Tab.0.right" timestamp="1604656414913">
+    <state width="844" height="431" key="GridCell.Tab.0.left/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604993861785" />
+    <state width="844" height="431" key="GridCell.Tab.0.right" timestamp="1604993861785">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state width="2004" height="466" key="GridCell.Tab.0.right/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656414913" />
-    <state x="781" y="370" key="SettingsEditor" timestamp="1604284317526">
+    <state width="844" height="431" key="GridCell.Tab.0.right/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604993861785" />
+    <state x="781" y="370" key="SettingsEditor" timestamp="1604994061677">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="781" y="370" key="SettingsEditor/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604284317526" />
+    <state x="781" y="370" key="SettingsEditor/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604994061677" />
     <state x="1009" y="469" width="540" height="524" key="StructurePopup" timestamp="1604647765381">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
     <state x="1009" y="469" width="540" height="524" key="StructurePopup/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604647765381" />
-    <state x="977" y="486" width="606" height="490" key="find.popup" timestamp="1604644076558">
+    <state x="880" y="471" key="Vcs.Push.Dialog.v2" timestamp="1604656645656">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="977" y="486" width="606" height="490" key="find.popup/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604644076558" />
-    <state x="944" y="345" key="run.anything.popup" timestamp="1604285542139">
+    <state x="880" y="471" key="Vcs.Push.Dialog.v2/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604656645656" />
+    <state x="977" y="486" width="606" height="548" key="find.popup" timestamp="1604886342226">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>
-    <state x="944" y="345" key="run.anything.popup/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604285542139" />
+    <state x="977" y="486" width="606" height="548" key="find.popup/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604886342226" />
+    <state x="944" y="345" key="run.anything.popup" timestamp="1604899872314">
+      <screen x="0" y="23" width="2560" height="1417" />
+    </state>
+    <state x="944" y="345" key="run.anything.popup/0.23.2560.1417/2560.23.1920.1057@0.23.2560.1417" timestamp="1604899872314" />
     <state x="943" y="346" width="672" height="678" key="search.everywhere.popup" timestamp="1604633955302">
       <screen x="0" y="23" width="2560" height="1417" />
     </state>

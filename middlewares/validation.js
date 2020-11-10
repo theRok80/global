@@ -15,11 +15,13 @@ function validation(apiVersion) {
   return function validation(req, res, next) {
     req.apiVersion = apiVersion;
 
-    if (req.headers['x-api-key'] === 'test-api-key') {
-      next();
-    } else {
-      response.invalidKey(req, res);
-    }
+    // if (req.headers['x-api-key'] === 'test-api-key') {
+    //   next();
+    // } else {
+    //   response.invalidKey(req, res);
+    // }
+
+    next();
   };
 }
 
