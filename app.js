@@ -1,11 +1,9 @@
-const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const expressSession = require('express-session');
 const connectFlash = require('connect-flash');
 const uuid = require('uuid');
-const logger = require('./tools/logging');
 
 // routers
 const indexRouter = require('./routes/index');
@@ -16,7 +14,6 @@ const apiRouter = {
 };
 
 // middlewares
-const {header, validationResult} = require('express-validator');
 const validation = require('./middlewares/validation');
 const statistics = require('./middlewares/stastics');
 const userValidation = require('./middlewares/userValidation');
@@ -69,12 +66,12 @@ app.use('/api/v1',
 );
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function (req, res) {
   response.notFound(req, res);
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   // res.locals.message = err.message;
   // res.locals.error = req.app.get('env') === 'development' ? err : {};
